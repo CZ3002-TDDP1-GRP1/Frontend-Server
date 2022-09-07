@@ -47,7 +47,7 @@
                      ">
 
 
-                    <div class="row" style="background: white; padding: 1.5em; color: black; width: 50%; margin: 0 auto;">
+                    <div class="row text-center" style="background: white; padding: 1.5em; color: black; width: 50%; margin: 0 auto;">
                         <h1>
                             IPPT Calculator
                         </h1>
@@ -119,9 +119,10 @@
                         <br />
 
 
-                        <a href="#" onclick ="showresult()" class="btn btn-success" style="width: 80px; padding: 0.5em; text-decoration: none;">
+                        <a onclick ="showresult()" class="btn btn-success" style="width: 80px; padding: 0.5em; text-decoration: none;">
                             Calculate
                         </a> 
+                        <br />
                         <div id="result"></div>
                     </div>
                 </div>
