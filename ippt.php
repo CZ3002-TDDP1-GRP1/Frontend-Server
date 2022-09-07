@@ -12,37 +12,15 @@
         <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
 
         <?php require_once "require/meta.php"; ?>
-<!--Meta Description here-->
-<meta name="description" content= "CZ3002 Project" />
+
+        <script>
+
+            function showresult() {
+                document.getElementById("result").innerHTML = "YOU FAIL";
+            }
 
 
-<!--Static CSS-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style.css">
-
-<!--Static Scripts-->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/validate.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<!--Fonts-->
-<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
-
-<script src="js/imagelightbox.min.js"></script>
-<script src="js/imagelightbox.js"></script>
-<link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
-<script>
-
-    function showresult() {
-        document.getElementById("result").innerHTML = "81 pts / Silver";
-    }
-
-
-</script>
+        </script>
 
     </head>
 
@@ -76,76 +54,79 @@
                                 <img src="images/ML2.png" style="filter: brightness(30%); object-fit: cover; min-height: 100vh;">                            
                             </div>
 
-                            <div class="carousel-content2">
-                                <div class="row" style="background: white; padding: 1.5em; color: black;">
+                            
+<div class="carousel-content2">
+                                <div class="row" style="background: white; padding: 1.5em; color: black; top: 500px;">
                                     <h1>
                                         IPPT Calculator
                                     </h1>
                                     <p>Please fill in the following.</p>
                                     <br />
-                                    <label for='Gender' class='col-sm-5'>Gender: </label>
-                                    <select class="form-select col-sm-6 form-select-lg mb-3" aria-label=".form-select-lg example" id= 'Gender'>
-                                        <option selected>Choose your Gender</option>
+                                    <label for='Gender' class='col-md-4'>Gender: </label>
+                                    <select class="form-select col-md-7 text-center" aria-label=".form-select-lg example" id= 'Gender'>
+                                        <option selected>(select)</option>
                                         <option value="M">Male</option>
                                         <option value="F">Female</option>
                                     </select>
-                                    <br />
-                                    <label for='Service' class='col-sm-5'>Type of Service : </label>
-                                    <select class="form-select col-sm-6 form-select-sm" aria-label=".form-select-sm example" id='Service'>
-                                        <option selected>Choose service type</option>
+                                    <br /> <br />
+                                    <label for='Service' class='col-md-4'>Type of Service: </label>
+                                    <select class="form-select col-md-7 text-center form-select-md" aria-label=".form-select-md example" id='Service'>
+                                        <option selected>(select)</option>
                                         <option value="1">Active</option>
                                         <option value="2">NSman</option>
                                     </select>
                                     <br />
                                     <br />
-                                    <div class="row">
-                                        <div class="row-mb-3">
-                                            <label for='Age' class="col-sm-4 col-form-label col-form-label-sm">Enter your age: </label>
-                                            <div class="col-sm-2">
-                                                <input type="number" class="form-control form-control-sm" placeholder="age" aria-label="age" id='Age'>
-                                            </div>
-                                        </div>
-                                        <br />
-                                        <br />
+                                    <label for='Age' class='col-md-4'>Enter your age: </label>
+                                    <div class="col-md-7">
+                                        <input type="number" class="form-control text-center form-control-md" placeholder="Age" aria-label="age" id='age'>
 
                                     </div>
-                                    <div class="row">
-                                        <div class="row-mb-3">
-                                            <label for='run-mins' class="col-sm-4 col-form-label col-form-label-sm">2.4 km run: </label>
-                                            <div class="col-sm-2">
-                                                <input type="number" class="form-control form-control-sm" placeholder="min" aria-label="2.4 run mins" id='run-mins'>
-                                            </div>
-                                            <label for='run-secs' class="col-sm-1 col-form-label col-form-label-sm">mins </label>
-                                            <label for='run-secs' class="row g-0">s </label>
-                                            <div class="col-sm-2">
-                                                <input type="number" class="form-control form-control-sm" placeholder="sec" aria-label="2.4 run sec" id='run-sec'>
-                                            </div>
-                                        </div>
-                                        <br />
-
+                                    <br />
+                                    <br />
+                                    <div class="col-md-4">
+                                        <label for='run-mins' class="col-form-label col-form-label-md">2.4 km run: </label>
                                     </div>
-                                    <div class="row g-3">
-                                        <div class="row-mb-3">
-                                            <label for='pushup' class="col-sm-4 col-form-label col-form-label-sm">Push-ups: </label>
-                                            <div class="col-sm-2">
-                                                <input type="number" class="form-control form-control-sm" placeholder="reps" aria-label="Push-ups" id='pushup'>
-                                            </div>
-                                        </div>
-                                        <br />
-                                        <br />
-
+                                    <div class="col-md-4">
+                                        <input type="number" class="form-control form-control-md" placeholder="min" aria-label="2.4 run mins" id='run-mins'>
                                     </div>
-                                    <div class="row g-3">
-                                        <div class="row-mb-3">
-                                            <label for='situp' class="col-sm-4 col-form-label col-form-label-sm">Sit-ups: </label>
-                                            <div class="col-sm-2">
-                                                <input type="number" class="form-control form-control-sm" placeholder="reps" aria-label="Sit-ups" id='situp'>
-                                            </div>
-                                        </div>
-                                        <br />
-                                        <br />
-
+                                    <!--
+                                    <br />
+                                    <label for='run-secs' class="col-sm-2 ">mins</label>
+                                    <label for='run-secs' class="row g-0">s </label>
+                                    -->
+                                    <div class="col-md-3">
+                                        <input type="number" class="form-control form-control-md" placeholder="sec" aria-label="2.4 run sec" id='run-sec'>
                                     </div>
+                                    <br />
+                                    <br />
+
+                                    <div class="col-md-4">
+                                        <label for='pushup' class="col-form-label col-form-label-md">Push-ups: </label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <input type="number" class="form-control form-control-md" placeholder="reps" aria-label="Push-ups" id='pushup'>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div class="col-md-4">
+                                        <label for="situp" class="col-form-label col-form-label-md"
+                                               >Sit-ups:
+                                        </label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <input
+                                            type="number"
+                                            class="form-control form-control-md"
+                                            placeholder="reps"
+                                            aria-label="Sit-ups"
+                                            id="situp"
+                                            />
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <br />
+
 
                                     <a href="#" onclick ="showresult()" class="btn btn-success" style="width: 80px; padding: 0.5em; text-decoration: none;">
                                         Calculate

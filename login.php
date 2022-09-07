@@ -68,6 +68,10 @@
                                     <a href="index" class="btn btn-info" style="width: 80px; padding: 0.5em; text-decoration: none;">
                                         Login
                                     </a> 
+                                    <br />
+                                    <a href="register" style="padding-top: 1em; text-decoration: none;">
+                                        New? Click Here to Register
+                                    </a> 
                                 </div>
                             </div>
 

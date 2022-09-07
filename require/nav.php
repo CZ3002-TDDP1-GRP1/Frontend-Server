@@ -12,7 +12,7 @@
                         <a href="index" style="border:2px solid; border-radius:5px; font-size:1.3em">Home</a>
                     </li>
                     <li class="ippt xcv">
-                        <a href="#" style="border:2px solid; border-radius:5px; font-size:1.3em">IPPT</a>
+                        <a href="ippt" style="border:2px solid; border-radius:5px; font-size:1.3em">IPPT</a>
                     </li>
                 </ul>
             </div>
@@ -41,13 +41,13 @@
                     <ul class="menu-mobile-content">
                         
                         <li class="xcv">
-                            <a href="index" style="border:2px solid; border-radius:5px; font-size:1.3em">Home</a>
+                            <a href="index" style="border:2px solid;font-size:1.3em">Home</a>
                         </li>
                         <li class="xcv">
-                            <a href="bmi" style="border:2px solid; border-radius:5px; font-size:1.3em">BMI</a>
+                            <a href="bmi" style="border:2px solid;font-size:1.3em">BMI</a>
                         </li>
                         <li class="xcv">
-                            <a href="#" style="border:2px solid; border-radius:5px; font-size:1.3em">IPPT</a>
+                            <a href="ippt" style="border:2px solid;font-size:1.3em">IPPT</a>
                         </li>
                     </ul>
                 </div>

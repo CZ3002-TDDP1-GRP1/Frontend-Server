@@ -75,6 +75,10 @@
                                     <a href="index" class="btn btn-info" style="width: 80px; padding: 0.5em; text-decoration: none;">
                                         Register
                                     </a> 
+                                    <br/> 
+                                    <a href="login" style="padding-top: 1em; text-decoration: none;">
+                                        Already a Member? Click Here to Login
+                                    </a> 
                                 </div>
                             </div>
 
