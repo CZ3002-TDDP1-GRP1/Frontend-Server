@@ -20,9 +20,6 @@
 
         <div id="wrapper" class="main-home" >            
 
-            <!-- Insert Nav Bar Here -->
-            <?php require_once "require/nav.php"; ?>
-
             <!--Main content -->
 
             <div class="full-width main-content">

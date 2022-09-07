@@ -20,8 +20,6 @@
 
         <div id="wrapper" class="main-home" >            
 
-            <!-- Insert Nav Bar Here -->
-
             <!--Main content -->
 
             <div class="full-width main-content">
