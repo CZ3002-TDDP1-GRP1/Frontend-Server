@@ -62,10 +62,49 @@
                      padding: 2em;
                      min-height: 100vh;
                      ">
-
+                    
                     <div class="row text-center" style="background: white; padding: 1.5em; color: black; width: 50%; margin: 0 auto;">
 
-
+                        <div class="row">
+                            <div class="col-md-4 btn" style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 10</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 11</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 12</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 13</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <div class="glyphicon glyphicon-calendar" style="font-size: 3em; padding: 0.42em;"></div>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Calendar</p>
+                            </div>
+                        </div>
+                        <div class="content row" style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;"> 
+                                    <p class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;">10 Nov</p>
+                                <div class="col-sm-5">
+                                    <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                    <p style="font-weight: bold; text-align:center; font-size: 0.5rem;padding: 0.1rem;">Thundery Showers</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="row" style="padding-top: 18%;text-align: left;">
+                                        <img src="images/hot.png" style="max-height: 3em;">
+                                        <span style="position:absolute;bottom: 50%;">32&#8451;</span>
+                                    </div>
+                                    <div class="row" style="text-align: left;">
+                                        <img src="images/cold.png" style="max-height: 3em;"/>
+                                        <span style="position:absolute;bottom: 13%;">24&#8451;</span>
+                                    </div>
+                                </div>
+                        </div>
+                        
                         <div class="row pushup form-check" style="padding: 0.5em;">
                             <div class="col-md-2">
                                 <input class="form-check-input" type="checkbox" value="" id="pushup">
