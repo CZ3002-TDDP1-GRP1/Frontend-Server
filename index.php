@@ -13,12 +13,16 @@
 
         <?php require_once "require/meta.php"; ?>
 
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
         <script>
 
-            function showresult() {
-                document.getElementById("result").innerHTML = "YOU ARE FAT";
-            }
-
+            $(document).ready(function () {
+                $("#d").datepicker({minDate: 0, maxDate: "+1Y"});
+            
+    
+    
+    })
 
         </script>
 
@@ -63,7 +67,7 @@
                      min-height: 100vh;
                      ">
                     
-                    <div class="row text-center" style="background: white; padding: 1.5em; color: black; width: 50%; margin: 0 auto;">
+                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; min-width: 50%; margin: 0 auto;">
 
                         <div class="row">
                             <div class="col-md-4 btn" style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
@@ -91,7 +95,7 @@
                                     <p class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;">10 Nov</p>
                                 <div class="col-sm-5">
                                     <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                    <p style="font-weight: bold; text-align:center; font-size: 0.5rem;padding: 0.1rem;">Thundery Showers</p>
+                                    <p style="font-weight: bold; text-align:center; font-size: 2rem;padding: 0.1rem;">Thundery Showers</p>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="row" style="padding-top: 18%;text-align: left;">
