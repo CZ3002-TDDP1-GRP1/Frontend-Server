@@ -5,6 +5,7 @@
         <nav id="nav" class="nav-holder text-center">
             <div class="logo">
                 <ul class="navigation">
+                    <div class="col-md-6 text-right">
                     <li class="xcv">
                         <a href="bmi" style="border:2px solid; border-radius:5px; font-size:1.3em">BMI</a>
                     </li>
@@ -14,7 +15,12 @@
                     <li class="ippt xcv">
                         <a href="ippt" style="border:2px solid; border-radius:5px; font-size:1.3em">IPPT</a>
                     </li>
+                    </div>
+                    <div class="col-md-3 text-right">
+                    <a href="logout" class="btn btn-primary" style="border: none; margin-top: 1em; background-color: red;">Logout</a>
+                    </div>
                 </ul>
+                
             </div>
         </nav>
     </header>
@@ -48,6 +54,9 @@
                         </li>
                         <li class="xcv">
                             <a href="ippt" style="border:2px solid;font-size:1.3em">IPPT</a>
+                        </li>
+                        <li class="xcv">
+                            <a href="logout" style="border:2px solid;font-size:1.3em">Logout</a>
                         </li>
                     </ul>
                 </div>

@@ -67,7 +67,7 @@
                      min-height: 100vh;
                      ">
                     
-                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; min-width: 50%; margin: 0 auto;">
+                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
                         <div class="row">
                             <div class="col-md-4 btn" style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
