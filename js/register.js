@@ -1,11 +1,11 @@
-async function registerHandler() {
+async function registerHandler(user_name, user_email, user_pwd) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
     var raw = JSON.stringify({
-      "email": "test@gmail.com",
-      "name": "Michael",
-      "password": "P@ssw0rd"
+      "email": user_email,
+      "name": user_name,
+      "password": user_pwd
     });
     
     var requestOptions = {
