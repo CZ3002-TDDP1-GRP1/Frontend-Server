@@ -12,7 +12,7 @@
         <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
 
         <!--Meta Description here-->
-<meta name="description" content= "CZ3002 Project" />
+        <meta name="description" content= "CZ3002 Project" />
 
 
 <!--Static CSS-->
@@ -28,6 +28,9 @@
 <script type="text/javascript" src="js/index.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
+<!--Register Functions-->>
+<script src="js/register.js"></script>
+
 <!--Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
 
@@ -39,7 +42,6 @@
 
 
     <body>
-
         <div id="wrapper" class="main-home" >            
 
             <!--Main content -->
@@ -78,7 +80,7 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <input type="email" name="e" id="e" class="form-control" placeholder="Login" required /> <br />   
+                                            <input type="email" name="e" id="e" class="form-control" placeholder="Email" required /> <br />   
                                         </div>
 
                                         <div class="col-md-12">
@@ -90,10 +92,10 @@
                                         </div>
 
                                     </div>
-
-                                    <a href="\index.html" class="btn btn-info" style="width: 80px; padding: 0.5em; text-decoration: none;">
+                                    <button type="button" onclick="registerHandler()">Register</button>
+                                    <!--a href="\index.html" class="btn btn-info" style="width: 80px; padding: 0.5em; text-decoration: none;">
                                         Register
-                                    </a> 
+                                    </a--> 
                                     <br/> 
                                     <a href="\login.html" style="padding-top: 1em; text-decoration: none;">
                                         Already a Member? Click Here to Login
