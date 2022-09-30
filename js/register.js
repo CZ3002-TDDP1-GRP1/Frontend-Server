@@ -3,7 +3,7 @@ async function registerHandler() {
     myHeaders.append("Content-Type", "application/json");
 
     console.log("trying to get element by id");
-    
+
     var raw = JSON.stringify({
       "email": document.getElementById('user_email').value,
       "name": document.getElementById('user_name').value,
