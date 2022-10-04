@@ -11,40 +11,36 @@
         <!--Title of webpage here-->
         <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
 
-        <!--Meta Description here-->
-<meta name="description" content= "CZ3002 Project" />
-
-
-<!--Static CSS-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style.css">
-
-<!--Static Scripts-->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/validate.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<!--Fonts-->
-<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
-
-<script src="js/imagelightbox.min.js"></script>
-<script src="js/imagelightbox.js"></script>
-<link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
+        <?php require_once "require/meta.php"; ?>
 
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--Static Scripts-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/validate.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
+
+        <script src="js/imagelightbox.min.js"></script>
+        <script src="js/imagelightbox.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
+
         <script>
 
             $(document).ready(function () {
-                $("#d").datepicker({minDate: 0, maxDate: "+1Y"});
+                $("#d").datepicker({minDate: "-1Y", maxDate: "+1Y"});
             
     
     
-    })
+            })
 
         </script>
 
@@ -71,6 +67,7 @@
 
         <div id="wrapper" class="main-home" >            
 
+            <!-- Insert Nav Bar Here -->
             <!-- Insert Nav Bar Here -->
             <div class="navigation_bar">
 
@@ -174,7 +171,7 @@
                      min-height: 100vh;
                      ">
                     
-                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; min-width: 50%; margin: 0 auto;">
+                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
                         <div class="row">
                             <div class="col-md-4 btn" style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
@@ -193,9 +190,11 @@
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                 <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 13</p>
                             </div>
-                            <div class="col-md-2 btn">
-                                <div class="glyphicon glyphicon-calendar" style="font-size: 3em; padding: 0.42em;"></div>
-                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Calendar</p>
+                                
+                            <div class="col-md-2 btn"><div class="glyphicon glyphicon-calendar" style="font-weight: bold; font-size: 3em; padding: 0.42em;">
+                                    <br /> <br />
+                                    <input type="text" id="d" name="d" class="btn btn-info form-control" placeholder = "Date"  /> <br />
+                  
                             </div>
                         </div>
                         <div class="content row" style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;"> 
@@ -226,7 +225,7 @@
                                 </label>
                             </div>
                             <div class="col-md-5">
-                                <a href="#" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                                <a href="\add.html" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
                                     <span class="glyphicon glyphicon-pencil"></span> 
                                 </a> 
                                 <a href="#" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
@@ -258,7 +257,7 @@
                                 </label>
                             </div>
                             <div class="col-md-5">
-                                <a href="#" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                                <a href="\add.html" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
                                     <span class="glyphicon glyphicon-pencil"></span> 
                                 </a> 
                                 <a href="#" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
@@ -288,7 +287,7 @@
                                 </label>
                             </div>
                             <div class="col-md-5">
-                                <a href="#" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                                <a href="\add.html" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
                                     <span class="glyphicon glyphicon-pencil"></span> 
                                 </a> 
                                 <a href="#" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
@@ -314,6 +313,10 @@
 
                             Push Up, Sit Up, Swimming, Yoga, Weightlifting
                         </b>
+                        
+                        <hr />
+                        <br />
+                        <a href="add" class="btn btn-primary">Add New Exercise (+)</a>
 
                     </div>
 
