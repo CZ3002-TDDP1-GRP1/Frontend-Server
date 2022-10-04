@@ -29,13 +29,14 @@ function addNewExercise(){
     .then((response) => {
         // Our handler throws an error if the request did not succeed.
         if (!response.ok) {
-          alert("Login Failed: Please check your email/password...");
+          alert("Failed to add exercise: Please check your again...");
           throw new Error(`HTTP error: ${response.status}`);
         }
         return response.text();
         })
       .then(result => {
         console.log(result);
+        alert("Exercise plan added...");
         window.location.assign('http://127.0.0.1:8080/index.html');})
       .catch(error => console.log('error', error)); 
 }
