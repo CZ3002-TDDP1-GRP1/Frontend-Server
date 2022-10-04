@@ -20,7 +20,17 @@ async function registerHandler() {
     };
     
     fetch("http://localhost:8080/auth/register", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error)); 
-}
+      .then((response) => {
+        // Our handler throws an error if the request did not succeed.
+        if (!response.ok) {
+          alert("Register Failed: Please check your email/password...");
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.text();
+        })
+      .then(result => {
+        console.log(result);
+        window.location.assign('http://127.0.0.1:8080/index.html');})
+      .catch(error => console.log('error', error));   
+
+    } 

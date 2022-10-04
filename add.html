@@ -24,6 +24,7 @@
 <script type="text/javascript" src="js/validate.min.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/fitnessplan.js"></script>
 
 <!--Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
@@ -187,6 +188,11 @@
                                             <option value="1">Push Up</option>
                                             <option value="2">Sit Up</option>
                                             <option value="3">Running</option>
+                                            <option value="4">Walking</option>
+                                            <option value="5">Cycling</option>
+                                            <option value="6">Swimming</option>
+                                            <option value="7">Yoga</option>
+                                            <option value="8">Weight-lifting</option>
                                         </select>
                                     </div><br />
                                     <div class="row">
@@ -211,7 +217,7 @@
                                                 <option value="1000">1000HRS</option>
                                                 <option value="1100">1100HRS</option>
                                                 <option value="1200">1200HRS</option>
-                                                <option value="1300">130HRS</option>
+                                                <option value="1300">1300HRS</option>
                                                 <option value="1400">1400HRS</option>
                                                 <option value="1500">1500HRS</option>
                                                 <option value="1600">1600HRS</option>
@@ -244,7 +250,7 @@
                                                 <option value="1000">1000HRS</option>
                                                 <option value="1100">1100HRS</option>
                                                 <option value="1200">1200HRS</option>
-                                                <option value="1300">130HRS</option>
+                                                <option value="1300">1300HRS</option>
                                                 <option value="1400">1400HRS</option>
                                                 <option value="1500">1500HRS</option>
                                                 <option value="1600">1600HRS</option>
@@ -280,9 +286,14 @@
                                         required/>
                                     </div>
                                     <br />
-                                    <a class="btn btn-info" href="\index.html" style="width: 80px; padding: 0.5em; text-decoration: none;">
+                                    <button class="btn btn-info" id="submit" style="width: 80px; padding: 0.5em; text-decoration: none;">
                                         Add
-                                    </a> 
+                                    </button>
+                                    <script>
+                                        const btn = document.getElementById("submit");
+                                        btn.addEventListener('click', addNewExercise);
+                                    </script>
+
                                 </div>
                             </div>
 

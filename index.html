@@ -11,6 +11,341 @@
         <!--Title of webpage here-->
         <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
 
+        <!--Meta Description here-->
+<meta name="description" content= "CZ3002 Project" />
+
+
+<!--Static CSS-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!--Static Scripts-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="js/validate.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!--Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
+
+<script src="js/imagelightbox.min.js"></script>
+<script src="js/imagelightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+        <script>
+
+            $(document).ready(function () {
+                $("#d").datepicker({minDate: 0, maxDate: "+1Y"});
+            
+    
+    
+    })
+
+        </script>
+
+        <style>
+
+            input[type="checkbox"] {
+                appearance: none;
+                /* background, border etc to customize */ 
+                border: 1px solid black;
+                width: 20px;
+                height: 20px;
+            }
+
+            input[type="checkbox"]:checked {
+                /* checked state CSS */ 
+                background: black;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="wrapper" class="main-home" >            
+
+            <!-- Insert Nav Bar Here -->
+            <div class="navigation_bar">
+
+                <!-- Navigation Bar Desktop -->
+                <header id="header" class="header hidden-xs hidden-sm">
+                    <nav id="nav" class="nav-holder text-center">
+                        <div class="logo">
+                            <ul class="navigation">
+                                <div class="col-md-6 text-right">
+                                <li class="xcv">
+                                    <a href="\bmi.html" style="border:2px solid; border-radius:5px; font-size:1.3em">BMI</a>
+                                </li>
+                                <li class="xcv">
+                                    <a href="\index.html" style="border:2px solid; border-radius:5px; font-size:1.3em">Home</a>
+                                </li>
+                                <li class="ippt xcv">
+                                    <a href="\ippt.html" style="border:2px solid; border-radius:5px; font-size:1.3em">IPPT</a>
+                                </li>
+                                </div>
+                                <div class="col-md-3 text-right">
+                                <a href="\login.html" class="btn btn-primary" style="border: none; margin-top: 1em; background-color: red;">Logout</a>
+                                </div>
+                            </ul>
+                            
+                        </div>
+                    </nav>
+                </header>
+            
+                <!--Whitespace to offset fixed Navbar-->
+            
+                <header class="hidden-xs hidden-sm" style="min-height: 80px;">
+                </header>
+            
+                <!-- End Navigation Bar Desktop-->
+            
+                <!-- Navigation Bar Mobile --> 
+                <header id="header-mobile" class="visible-xs visible-sm">
+            
+                    <div class = "row">
+            
+            
+                        <div class ="col-xs-6 text-left">
+                            <div class="menu-mobile">
+                                <div class="title-menu" style='margin-top: 10px;'>
+                                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                                </div>
+            
+                                <ul class="menu-mobile-content">
+                                    
+                                    <li class="xcv">
+                                        <a href="\index.html" style="border:2px solid;font-size:1.3em">Home</a>
+                                    </li>
+                                    <li class="xcv">
+                                        <a href="\bmi.html" style="border:2px solid;font-size:1.3em">BMI</a>
+                                    </li>
+                                    <li class="xcv">
+                                        <a href="\ippt.html" style="border:2px solid;font-size:1.3em">IPPT</a>
+                                    </li>
+                                    <li class="xcv">
+                                        <a href="\register.html" style="border:2px solid;font-size:1.3em">Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <div class ="col-xs-6 text-right">
+                            <div class="logo">
+                                <ul>
+                                    <li class="title-menu xcv" style="margin-top:10px;">
+                                        <a href="\index.html">
+                                            <div style="color: rgb(20,20,20); text-align:center; border:2px solid; border-radius:5px; font-size:1.3em">WeGymLater</div>
+                                        </a>
+            
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    <br />
+            
+                </header>
+            
+                <header class="visible-xs visible-sm" style="min-height: 50px;">
+                </header>
+            </div>
+
+            <!--Main content -->
+
+            <div class="full-width main-content" >
+                <div class="home-content" style="
+                     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/ML4.png');
+                     background-position: center;
+                     background-repeat: no-repeat;
+                     -moz-background-size: cover;
+                     -o-background-size: cover;
+                     -webkit-background-size: cover;
+                     background-size: cover;
+                     padding: 2em;
+                     min-height: 100vh;
+                     ">
+                    
+                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; min-width: 50%; margin: 0 auto;">
+
+                        <div class="row">
+                            <div class="col-md-4 btn" style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 10</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 11</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 12</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 13</p>
+                            </div>
+                            <div class="col-md-2 btn">
+                                <div class="glyphicon glyphicon-calendar" style="font-size: 3em; padding: 0.42em;"></div>
+                                <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Calendar</p>
+                            </div>
+                        </div>
+                        <div class="content row" style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;"> 
+                                    <p class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;">10 Nov</p>
+                                <div class="col-sm-5">
+                                    <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
+                                    <p style="font-weight: bold; text-align:center; font-size: 2rem;padding: 0.1rem;">Thundery Showers</p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="row" style="padding-top: 18%;text-align: left;">
+                                        <img src="images/hot.png" style="max-height: 3em;">
+                                        <span style="position:absolute;bottom: 50%;">32&#8451;</span>
+                                    </div>
+                                    <div class="row" style="text-align: left;">
+                                        <img src="images/cold.png" style="max-height: 3em;"/>
+                                        <span style="position:absolute;bottom: 13%;">24&#8451;</span>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                        <div class="row pushup form-check" style="padding: 0.5em;">
+                            <div class="col-md-2">
+                                <input class="form-check-input" type="checkbox" value="" id="pushup">
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-check-label" for="pushup" style="font-size: 13px;">
+                                    <b>Push Ups</b>
+                                </label>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="#" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                                    <span class="glyphicon glyphicon-pencil"></span> 
+                                </a> 
+                                <a href="#" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
+                                    <span class="glyphicon glyphicon-trash"></span> 
+                                </a> 
+                            </div>
+                            <br /> <br /> <br />
+                            <div class="col-md-6">
+                                Reps: 30
+                                <br />
+                                Sets: 3
+                            </div>
+                            <div class="col-md-6">
+                                <span class="glyphicon glyphicon-fire"></span> 102.60kcal
+                                <br />
+                                burned
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row yoga form-check" style="padding: 0.5em;">
+                            <div class="col-md-2">
+                                <input class="form-check-input" type="checkbox" value="" id="yoga">
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-check-label" for="pushup" style="font-size: 13px;">
+                                    <b>Yoga</b>
+                                </label>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="#" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                                    <span class="glyphicon glyphicon-pencil"></span> 
+                                </a> 
+                                <a href="#" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
+                                    <span class="glyphicon glyphicon-trash"></span> 
+                                </a> 
+                            </div>
+                            <br /> <br /> <br />
+                            <div class="col-md-6">
+                                Duration: 50 mins
+                            </div>
+                            <div class="col-md-6">
+                                <span class="glyphicon glyphicon-fire"></span> 187.50kcal
+                                <br />
+                                burned
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="row cycling form-check" style="padding: 0.5em;">
+                            <div class="col-md-2">
+                                <input class="form-check-input" type="checkbox" value="" id="cycling">
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-check-label" for="pushup" style="font-size: 13px;">
+                                    <b>Cycling</b>
+                                </label>
+                            </div>
+                            <div class="col-md-5">
+                                <a href="#" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                                    <span class="glyphicon glyphicon-pencil"></span> 
+                                </a> 
+                                <a href="#" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
+                                    <span class="glyphicon glyphicon-trash"></span> 
+                                </a> 
+                            </div>
+                            <br /> <br /> <br />
+                            <div class="col-md-6">
+                                Distance: 1.8km
+                            </div>
+                            <div class="col-md-6">
+                                <span class="glyphicon glyphicon-fire"></span> 52.56kcal
+                                <br />
+                                burned
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <b>Alternative Exercises:
+
+                            <br /> 
+
+                            Push Up, Sit Up, Swimming, Yoga, Weightlifting
+                        </b>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- End content -->
+
+
+
+
+</body>
+
+=======
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+
+        <!-- Control website from being scrolled horizontally on mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+
+
+        <!--Title of webpage here-->
+        <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
+
         <?php require_once "require/meta.php"; ?>
 
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -25,6 +360,7 @@
         <script type="text/javascript" src="js/validate.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/fitnessplan.js"></script>
 
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
@@ -174,7 +510,7 @@
                     <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
                         <div class="row">
-                            <div class="col-md-4 btn" style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
+                            <div class="col-md-4 btn" onclick="getFitnessPlan()"style="border: 0.4em solid;border-radius: 2em;border-color:royalblue;">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                 <p style="font-weight: bold;font-size: 1.3em;padding: 0.3em;">Nov 10</p>
                             </div>
@@ -329,10 +665,3 @@
     </div>
 </div>
 <!-- End content -->
-
-
-
-
-</body>
-
-</html>
