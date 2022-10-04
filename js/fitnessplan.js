@@ -30,7 +30,28 @@ function addNewExercise(){
 }
 
 async function editExercise(){
-
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify({
+      "activityID": "633c0e2051360afcf8e78d2f",
+      "exerciseID": "633aeca7c395a37172c92ab0",
+      "quantity": 50,
+      "sets": 3,
+      "done": false
+    });
+    
+    var requestOptions = {
+      method: 'PATCH',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch("http://localhost:8080/plan/2022-10-04&633bee48c585975318ce54fd/activity", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
 }
 
 async function deleteExercise(){
