@@ -23,7 +23,7 @@ async function registerHandler() {
       .then((response) => {
         // Our handler throws an error if the request did not succeed.
         if (!response.ok) {
-          alert(response.json());
+          alert("Register Failed: Please check your email/password...");
           throw new Error(`HTTP error: ${response.status}`);
         }
         return response.text();
