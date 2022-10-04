@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+
+        <!-- Control website from being scrolled horizontally on mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+
+
+        <!--Title of webpage here-->
+        <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
+
+        
+<!--Static CSS-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!--Static Scripts-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="js/validate.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/fitnessplan.js"></script>
+
+<!--Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
+
+<script src="js/imagelightbox.min.js"></script>
+<script src="js/imagelightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <style>
+            body {
+                color: black;
+            }
+        </style>
+
+        <script>
+
+            $(document).ready(function () {
+                $("#start").datepicker({minDate: 0, maxDate: "+1Y"});
+                $("#end").datepicker({minDate: 0, maxDate: "+1Y"});
+            })
+
+        </script>
+
+    </head>
+
+
+    <body>
+
+        <div id="wrapper" class="main-home" >           
+
+            <!-- Insert Nav Bar Here -->
+           <!-- Insert Nav Bar Here -->
+           <div class="navigation_bar">
+
+<!-- Navigation Bar Desktop -->
+<header id="header" class="header hidden-xs hidden-sm">
+    <nav id="nav" class="nav-holder text-center">
+        <div class="logo">
+            <ul class="navigation">
+                <div class="col-md-6 text-right">
+                <li class="xcv">
+                    <a href="\bmi.html" style="border:2px solid; border-radius:5px; font-size:1.3em">BMI</a>
+                </li>
+                <li class="xcv">
+                    <a href="\index.html" style="border:2px solid; border-radius:5px; font-size:1.3em">Home</a>
+                </li>
+                <li class="ippt xcv">
+                    <a href="\ippt.html" style="border:2px solid; border-radius:5px; font-size:1.3em">IPPT</a>
+                </li>
+                </div>
+                <div class="col-md-3 text-right">
+                <a href="\login.html" class="btn btn-primary" style="border: none; margin-top: 1em; background-color: red;">Logout</a>
+                </div>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+
+<!--Whitespace to offset fixed Navbar-->
+
+<header class="hidden-xs hidden-sm" style="min-height: 80px;">
+</header>
+
+<!-- End Navigation Bar Desktop-->
+
+<!-- Navigation Bar Mobile --> 
+<header id="header-mobile" class="visible-xs visible-sm">
+
+    <div class = "row">
+
+
+        <div class ="col-xs-6 text-left">
+            <div class="menu-mobile">
+                <div class="title-menu" style='margin-top: 10px;'>
+                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                </div>
+
+                <ul class="menu-mobile-content">
+                    
+                    <li class="xcv">
+                        <a href="\index.html" style="border:2px solid;font-size:1.3em">Home</a>
+                    </li>
+                    <li class="xcv">
+                        <a href="\bmi.html" style="border:2px solid;font-size:1.3em">BMI</a>
+                    </li>
+                    <li class="xcv">
+                        <a href="\ippt.html" style="border:2px solid;font-size:1.3em">IPPT</a>
+                    </li>
+                    <li class="xcv">
+                        <a href="\register.html" style="border:2px solid;font-size:1.3em">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class ="col-xs-6 text-right">
+            <div class="logo">
+                <ul>
+                    <li class="title-menu xcv" style="margin-top:10px;">
+                        <a href="\index.html">
+                            <div style="color: rgb(20,20,20); text-align:center; border:2px solid; border-radius:5px; font-size:1.3em">WeGymLater</div>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <br />
+
+</header>
+
+<header class="visible-xs visible-sm" style="min-height: 50px;">
+</header>
+</div>
+
+            <!--Main content -->
+
+            <div class="full-width main-content">
+                <div class="home-content">
+
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="item active">
+                                <img src="images/ML3.png" style="filter: brightness(30%); object-fit: cover; min-height: 100vh;">
+                            </div>
+
+
+                            <div class="item">
+                                <img src="images/ML4.png" style="filter: brightness(30%); object-fit: cover; min-height: 100vh;">
+
+                            </div>
+
+                            <div class="item">
+                                <img src="images/ML2.png" style="filter: brightness(30%); object-fit: cover; min-height: 100vh;">                            
+                            </div>
+
+                            <div class="carousel-content2">
+                                <div class="row">
+                                    <h1>
+                                        Add New Exercise
+                                    </h1>
+                                    <p>You are now one step closer to becoming a better version of yourself.</p>
+                                    <br />
+                                    <div class="row">
+                                        <label for='Service' class='col-md-4'>Exercise: </label>
+
+                                        <select class="form-select col-md-8 text-center" id='exercise' style="padding: 0.5em; color: rgb(100,100,100);">
+                                            <option selected>(select)</option>
+                                            <option value="1">Push Up</option>
+                                            <option value="2">Sit Up</option>
+                                            <option value="3">Running</option>
+                                            <option value="4">Walking</option>
+                                            <option value="5">Cycling</option>
+                                            <option value="6">Swimming</option>
+                                            <option value="7">Yoga</option>
+                                            <option value="8">Weight-lifting</option>
+                                        </select>
+                                    </div><br />
+                                    <div class="row">
+                                        <input type="text" id="start" name="start" class="form-control" placeholder = "Start Date" /> <br />
+                                        <div class="col-md-6">
+                                            <b>From:</b>
+                                            <br />
+                                        
+
+                                            <select class="form-select text-center" id='starttime' style="padding: 0.5em; color: rgb(100,100,100);">
+                                                <option selected>(select time)</option>
+                                                <option value="0000">0000HRS</option>
+                                                <option value="0100">0100HRS</option>
+                                                <option value="0200">0200HRS</option>
+                                                <option value="0300">0300HRS</option>
+                                                <option value="0400">0400HRS</option>
+                                                <option value="0500">0500HRS</option>
+                                                <option value="0600">0600HRS</option>
+                                                <option value="0700">0700HRS</option>
+                                                <option value="0800">0800HRS</option>
+                                                <option value="0900">0900HRS</option>
+                                                <option value="1000">1000HRS</option>
+                                                <option value="1100">1100HRS</option>
+                                                <option value="1200">1200HRS</option>
+                                                <option value="1300">1300HRS</option>
+                                                <option value="1400">1400HRS</option>
+                                                <option value="1500">1500HRS</option>
+                                                <option value="1600">1600HRS</option>
+                                                <option value="1700">1700HRS</option>
+                                                <option value="1800">1800HRS</option>
+                                                <option value="1900">1900HRS</option>
+                                                <option value="2000">2000HRS</option>
+                                                <option value="2100">2100HRS</option>
+                                                <option value="2200">2200HRS</option>
+                                                <option value="2300">2300HRS</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <b>To:</b>
+                                            <br />
+
+                                            <select class="form-select text-center" id='endtime' style="padding: 0.5em; color: rgb(100,100,100);">
+                                                <option selected>(select time)</option>
+                                                <option value="0000">0000HRS</option>
+                                                <option value="0100">0100HRS</option>
+                                                <option value="0200">0200HRS</option>
+                                                <option value="0300">0300HRS</option>
+                                                <option value="0400">0400HRS</option>
+                                                <option value="0500">0500HRS</option>
+                                                <option value="0600">0600HRS</option>
+                                                <option value="0700">0700HRS</option>
+                                                <option value="0800">0800HRS</option>
+                                                <option value="0900">0900HRS</option>
+                                                <option value="1000">1000HRS</option>
+                                                <option value="1100">1100HRS</option>
+                                                <option value="1200">1200HRS</option>
+                                                <option value="1300">1300HRS</option>
+                                                <option value="1400">1400HRS</option>
+                                                <option value="1500">1500HRS</option>
+                                                <option value="1600">1600HRS</option>
+                                                <option value="1700">1700HRS</option>
+                                                <option value="1800">1800HRS</option>
+                                                <option value="1900">1900HRS</option>
+                                                <option value="2000">2000HRS</option>
+                                                <option value="2100">2100HRS</option>
+                                                <option value="2200">2200HRS</option>
+                                                <option value="2300">2300HRS</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+                                </br>
+                                    <div class="row">
+                                        <input type="number"
+                        
+                                        name="sets"
+                                        id="set"
+                                        class="form-control"
+                                        placeholder="Number of Sets"
+                                        required/>
+                                   
+                                    </br>
+                                        <input type="number"
+                                      
+                                        name="reps"
+                                        id="rep"
+                                        class="form-control"
+                                        placeholder="Number of Reps"
+                                        required/>
+                                    </div>
+                                    <br />
+                                    <button class="btn btn-info" id="submit" style="width: 80px; padding: 0.5em; text-decoration: none;">
+                                        Add
+                                    </button>
+                                    <script>
+                                        const btn = document.getElementById("submit");
+                                        btn.addEventListener('click', addNewExercise);
+                                    </script>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- End content -->
+
+
+
+
+    </body>
+
+</html>
