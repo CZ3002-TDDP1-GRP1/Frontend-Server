@@ -30,11 +30,22 @@ async function addNewExercise(){
         body: raw,
         redirect: 'follow'
     };
-
-    fetch(`http://localhost:8080/plan/${date.slice(6)}-${date.slice(0,2)}-${date.slice(3,5)}&633bee48c585975318ce54fd/activity`, requestOptions)
-    .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    //const userId = '633bee48c585975318ce54fd'; //hz's userId
+    const userId = '63249e50bafe9f2070ef7d3b'; // cy's userId
+    fetch(`http://localhost:8080/plan/${date.slice(6)}-${date.slice(0,2)}-${date.slice(3,5)}&${userId}/activity`, requestOptions)
+    .then((response) => {
+        // Our handler throws an error if the request did not succeed.
+        if (!response.ok) {
+          alert("Failed to add exercise: Please check your again...");
+          throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.text();
+        })
+      .then(result => {
+        console.log(result);
+        alert("Exercise plan added...");
+        window.location.assign('http://127.0.0.1:8080/index.html');})
+      .catch(error => console.log('error', error)); 
 }
 
 async function editExercise(){
