@@ -47,7 +47,30 @@
 
     <script>
       function showresult() {
-        document.getElementById("result").innerHTML = "YOU ARE FAT";
+        let h = document.getElementById("heightInput").value;
+        let w = document.getElementById("weightInput").value;
+        let bmi = w / (h * h);
+        switch (true) {
+          case bmi < 18.5:
+            document.getElementById("result").innerHTML =
+              "You are severely underweight, risk of nutritional deficiency.";
+            break;
+          case bmi < 23:
+            document.getElementById("result").innerHTML =
+              "Good job, your weight is in the healthy range.";
+            break;
+          case bmi < 30:
+            document.getElementById("result").innerHTML =
+              "Overweight! You are at moderate risk for heart disease and diabetes.";
+            break;
+          case bmi >= 30:
+            document.getElementById("result").innerHTML =
+              "You are obese! at higher risk of getting heart disease and diabetes.";
+          default:
+            document.getElementById("result").innerHTML =
+              "confusing results, did you enter the correct inputs?";
+        }
+        document.getElementById("result").innerHTML = bmiResult;
       }
     </script>
   </head>
@@ -225,7 +248,7 @@
                 <input
                   type="number"
                   name="height"
-                  id="h"
+                  id="heightInput"
                   class="form-control"
                   placeholder="Height (in kg)"
                   required
@@ -237,7 +260,7 @@
                 <input
                   type="number"
                   name="weight"
-                  id="w"
+                  id="weightInput"
                   class="form-control"
                   placeholder="Weight (in kg)"
                 />
