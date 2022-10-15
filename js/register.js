@@ -30,6 +30,8 @@ async function registerHandler() {
         }
         else{
           window.location.assign('http://127.0.0.1:8080/index.html');
+          localStorage.setItem('accessToken', data.token);
+          localStorage.setItem('refreshToken', data.refreshToken);
         }
         return data.message;
         })
