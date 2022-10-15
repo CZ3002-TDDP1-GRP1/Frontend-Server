@@ -1,6 +1,8 @@
 <div class="navigation_bar">
   <!-- Navigation Bar Desktop -->
   <header id="header" class="header hidden-xs hidden-sm">
+    <script src="js/logout.js"></script>
+    
     <nav id="nav" class="nav-holder text-center">
       <div class="col-md-4 text-left">
         <ul class="navigation">
@@ -42,6 +44,7 @@
               <a
                 class="dropdown-item"
                 href="\login.html"
+                onclick="logoutHandler()"
                 style="font-size: 1.3em; color: black"
                 >Logout</a
               >
@@ -97,7 +100,7 @@
                   >
                 </li>
                 <li>
-                  <a href="\login.html" style="font-size: 1.3em; color: black"
+                  <a href="\login.html" onclick="logoutHandler()" style="font-size: 1.3em; color: black"
                     >Logout</a
                   >
                 </li>
@@ -292,6 +295,7 @@
             <a
               class="dropdown-item"
               href="\login.html"
+              onclick="logoutHandler()"
               style="font-size: 1.3em; color: black; padding-left: 1em"
               >Logout</a
             >
