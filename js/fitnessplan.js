@@ -105,7 +105,11 @@ async function getFitnessPlan(){
   .then(response => response.json())
   .then(result => {
     const activities = result.activities;
+    count = 0;
     activities.forEach(async (activity) => {
+      const activityID = activity._id;
+      localStorage.setItem(activityID, JSON.stringify(activity));
+      count += 1;
       const exerciseName = exercisesList[activity.exerciseID]
       const mainDiv = document.getElementById("dynamic-container");
       const newDiv = document.createElement("div");
@@ -119,7 +123,7 @@ async function getFitnessPlan(){
                         </label>
                     </div>
                     <div class="col-md-5">
-                        <button onclick="openForm()" class="btn btn-danger" style="padding: 0.5em; text-decoration: none;">
+                        <button onclick="openForm(this.id)" class="btn btn-danger" id="${activityID}"style="padding: 0.5em; text-decoration: none;">
                             <span class="glyphicon glyphicon-pencil"></span> 
                         </button>
 
@@ -145,7 +149,7 @@ async function getFitnessPlan(){
                           </form>
                         </div>
 
-                        <a href="#" onclick="deleteExercise(this)" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
+                        <a href="#" onclick="deleteExercise(this.id)" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
                             <span class="glyphicon glyphicon-trash"></span> 
                         </a> 
                     </div>
@@ -168,7 +172,8 @@ async function getFitnessPlan(){
   .catch(err => console.log(err));
 }
 
-function openForm(){
+function openForm(clickID){
+  console.log(clickID);
   document.getElementById("myForm").style.display = "block";
 }
 
