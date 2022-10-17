@@ -11,7 +11,7 @@ function addNewExercise(){
     // push up, sit up, running, walking, cycling, swimming, Yoga, weightlifting
     //const exercisesID = ["633aeca7c395a37172c92aaf","633aeca7c395a37172c92ab0","633aeca7c395a37172c92ab1","633aeca7c395a37172c92ab2",
     //                    "633aeca7c395a37172c92ab3", "633aeca7c395a37172c92ab4", "633aeca7c395a37172c92ab5", "633aeca7c395a37172c92ab6"]
-    const exercisesID = ["634a60f35ad006c227165d6e","633aeca7c395a37172c92ab0","633aeca7c395a37172c92ab1","633aeca7c395a37172c92ab2",
+    const exercisesID = ["634cd05932c025f5f59d5867","633aeca7c395a37172c92ab0","633aeca7c395a37172c92ab1","633aeca7c395a37172c92ab2",
     "633aeca7c395a37172c92ab3", "633aeca7c395a37172c92ab4", "633aeca7c395a37172c92ab5", "633aeca7c395a37172c92ab6"]
     const exerciseId = exercisesID[exercise-1];
     var raw = JSON.stringify({
