@@ -1,189 +1,189 @@
 <!doctype html>
 <html lang="en">
-    <head>
 
-        <meta charset="utf-8">
+<head>
 
-        <!-- Control website from being scrolled horizontally on mobile -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+    <meta charset="utf-8">
+
+    <!-- Control website from being scrolled horizontally on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes">
 
 
-        <!--Title of webpage here-->
-        <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
+    <!--Title of webpage here-->
+    <title>WeGymLater - CZ3002 Advanced Software Engineering Project</title>
 
-        <?php require_once "require/meta.php"; ?>
+    <?php require_once "require/meta.php"; ?>
 
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 
-        <!--Static Scripts-->
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script type="text/javascript" src="js/validate.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/fitnessplan.js"></script>
+    <!--Static Scripts-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/validate.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fitnessplan.js"></script>
+    <script src="js/forecast.js"></script>
 
-        <!--Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css">
 
-        <script src="js/imagelightbox.min.js"></script>
-        <script src="js/imagelightbox.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
+    <script src="js/imagelightbox.min.js"></script>
+    <script src="js/imagelightbox.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/imagelightbox.css">
 
-        <script>
+    <script>
 
-            $(document).ready(function () {
-                $("#d").datepicker({minDate: "-1Y", maxDate: "+1Y"});
-            
-    
-    
-            })
+        $(document).ready(function () {
+            $("#d").datepicker({ minDate: "-1Y", maxDate: "+1Y" });
 
-        </script>
-        <script>
-            $(function(){
-                $("#nav-placeholder").load("require/nav.html");
-            });
-            
-        </script>
-        <script>
 
-            $(document).ready(function () {
 
-                var getUrlParameter = function getUrlParameter(sParam) {
-                    var sPageURL = window.location.search.substring(1),
-                            sURLVariables = sPageURL.split('&'),
-                            sParameterName,
-                            i;
+        })
 
-                    for (i = 0; i < sURLVariables.length; i++) {
-                        sParameterName = sURLVariables[i].split('=');
+    </script>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("require/nav.html");
+        });
 
-                        if (sParameterName[0] === sParam) {
-                            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-                        }
+    </script>
+    <script>
+
+        $(document).ready(function () {
+
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
                     }
-                    return false;
-                };
-
-
-                var d = getUrlParameter('d');
-                
-                var options = { month: 'short', day: 'numeric' };
-                if (d != "") {
-
-                    d = new Date(d.replace( /(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"))
-                    // console.log(d);
-                    var month = d.getMonth() + 1;
-                    var day = d.getDate();
-
-                    // var output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-
-                    document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-                    
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + ++day;
-                    d.setDate(d.getDate() + 1);
-                    document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-                    
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + ++day;
-                    d.setDate(d.getDate() + 1);
-                    document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-                    
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + ++day;
-                    d.setDate(d.getDate() + 1);
-                    document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-                } else {
-
-                    var d = new Date();
-
-                    var month = d.getMonth() + 1;
-                    var day = d.getDate();
-                    // console.log(d);
-                    // var output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-
-                    document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-
-                    // day = day + 1
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-                    d.setDate(d.getDate() + 1);
-                    document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-
-                    // day = day + 1
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-                    d.setDate(d.getDate() + 1);
-                    document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-
-                    // day = day + 1
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-                    d.setDate(d.getDate() + 1);
-                    document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 }
+                return false;
+            };
 
-                $('.datepicker').datepicker({
-                    labelMonthNext: 'Go to the next month',
-                    labelMonthPrev: 'Go to the previous month',
-                    labelMonthSelect: 'Pick a month from the dropdown',
-                    labelYearSelect: 'Pick a year from the dropdown',
-                    selectMonths: true,
-                    selectYears: true
-                })
 
+            var d = getUrlParameter('d');
+
+            var options = { month: 'short', day: 'numeric' };
+            if (d != "") {
+
+                d = new Date(d.replace(/(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"))
+                // console.log(d);
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+
+                // var output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + day;
+
+                document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + ++day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + ++day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + ++day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+            } else {
+
+                var d = new Date();
+
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+                // console.log(d);
+                // var output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + day;
+
+                document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // day = day + 1
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // day = day + 1
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // day = day + 1
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+            }
+
+            $('.datepicker').datepicker({
+                labelMonthNext: 'Go to the next month',
+                labelMonthPrev: 'Go to the previous month',
+                labelMonthSelect: 'Pick a month from the dropdown',
+                labelYearSelect: 'Pick a year from the dropdown',
+                selectMonths: true,
+                selectYears: true
             })
 
+        })
+
+    </script>
+    <style>
+        input[type="checkbox"] {
+            appearance: none;
+            /* background, border etc to customize */
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+        }
+
+        input[type="checkbox"]:checked {
+            /* checked state CSS */
+            background: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper" class="main-home">
+
+        <!-- Insert Nav Bar Here -->
+        <!-- Insert Nav Bar Here -->
+        <div id="nav-placeholder"></div>
+
+        <!--Main content -->
+        <script>
+            document.addEventListener("DOMContentLoaded", getFitnessPlan());
         </script>
-        <style>
-
-            input[type="checkbox"] {
-                appearance: none;
-                /* background, border etc to customize */ 
-                border: 1px solid black;
-                width: 20px;
-                height: 20px;
-            }
-
-            input[type="checkbox"]:checked {
-                /* checked state CSS */ 
-                background: black;
-            }
-
-        </style>
-
-    </head>
-
-    <body>
-
-        <div id="wrapper" class="main-home" >            
-
-            <!-- Insert Nav Bar Here -->
-            <!-- Insert Nav Bar Here -->
-            <div id="nav-placeholder"></div>
-
-            <!--Main content -->
-            <script>
-                document.addEventListener("DOMContentLoaded", getFitnessPlan());
-            </script>
-            <div class="full-width main-content" >
-                <div class="home-content" style="
+        <div class="full-width main-content">
+            <div class="home-content" style="
                      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/ML4.png');
                      background-position: center;
                      background-repeat: no-repeat;
@@ -194,24 +194,25 @@
                      padding: 2em;
                      min-height: 100vh;
                      ">
-                    
-                    <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
-                        <div class="row">
-                            <div id="a2"class="col-md-3 btn" style="border: 0.4em solid;border-radius: 2em;border-color:red;">
-                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                <p id="d2" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
-                            </div>
-                            <div id="a3" class="col-md-3 btn">
-                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                <p id="d3" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p><br /> <br /> 
-                            </div>
-                            <div id="a4" class="col-md-3 btn">
-                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                <p id="d4" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
-                            </div>
-                                
-                            <!-- <div class="col-md-2 btn">
+                <div class="row text-center"
+                    style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
+
+                    <div class="row">
+                        <div id="a2" class="col-md-3 btn" style="max-height: 7em;" aria-label="weather">
+                            <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather" />
+                            <p id="d2" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
+                        </div>
+                        <div id="a3" class="col-md-3 btn">
+                            <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather" />
+                            <p id="d3" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p><br /> <br />
+                        </div>
+                        <div id="a4" class="col-md-3 btn">
+                            <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather" />
+                            <p id="d4" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
+                        </div>
+
+                        <!-- <div class="col-md-2 btn">
                                 <div class="glyphicon glyphicon-calendar" style="font-weight: bold; font-size: 3em; padding: 0.42em;">
                                     <br /> <br />
                                     <input type="text" id="d" name="d" class="btn btn-info form-control" placeholder = "Date"  /> <br />
@@ -220,7 +221,8 @@
                         </div> -->
                         <div class="col-md-3 text-center">
                             <form action="">
-                                <div class="glyphicon glyphicon-calendar" style="font-weight: bold; font-size: 3em; padding: 0.42em;"></div>
+                                <div class="glyphicon glyphicon-calendar"
+                                    style="font-weight: bold; font-size: 3em; padding: 0.42em;"></div>
                                 <br />
                                 <input type="date" id="d" name="d" placeholder="Select Date">
                                 <br />
@@ -228,40 +230,45 @@
                             </form>
                         </div>
 
-                        <div class="content row" style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;"> 
-                                    <p id="d1" class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;"></p>
-                                <div class="col-sm-5">
-                                    <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                    <p style="font-weight: bold; text-align:center; font-size: 2rem;padding: 0.1rem;">Thundery Showers</p>
+                        <div class="content row"
+                            style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;">
+                            <p id="d1" class="col-sm-3"
+                                style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;"></p>
+                            <div class="col-sm-5">
+                                <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather" />
+                                <p style="font-weight: bold; text-align:center; font-size: 2rem;padding: 0.1rem;">
+                                    Thundery Showers</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="row" style="padding-top: 10%;text-align: center;">
+                                    <img src="images/hot.png" style="max-height: 3em;">
+                                    <span id="highTemp" style="position:absolute;bottom: 50%;">
+                                        <body onload="getHighTemp(localStorage.getItem('accessDate'))"></body>
+                                    </span>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="row" style="padding-top: 10%;text-align: center;">
-                                        <img src="images/hot.png" style="max-height: 3em;">
-                                        <span style="position:absolute;bottom: 50%;">32&#8451;</span>
-                                    </div>
-                                    <div class="row" style="text-align: center;">
-                                        <img src="images/cold.png" style="max-height: 3em;"/>
-                                        <span style="position:absolute;bottom: 13%;">24&#8451;</span>
-                                    </div>
+                                <div class="row" style="text-align: center;">
+                                    <img src="images/cold.png" style="max-height: 3em;" />
+                                    <span id="lowTemp" style="position:absolute;bottom: 13%;"></span>
                                 </div>
+                            </div>
                         </div>
                         <div id="dynamic-container">
 
                         </div>
                         <script>
                             const dateDict = {
-                                "Jan" : "01",
-                                "Feb" : "02",
-                                "Mar" : "03",
-                                "Apr" : "04",
-                                "May" : "05",
-                                "Jun" : "06",
-                                "Jul" : "07",
-                                "Aug" : "08",
-                                "Sep" : "09",
-                                "Oct" : "10",
-                                "Nov" : "11",
-                                "Dec" : "12"
+                                "Jan": "01",
+                                "Feb": "02",
+                                "Mar": "03",
+                                "Apr": "04",
+                                "May": "05",
+                                "Jun": "06",
+                                "Jul": "07",
+                                "Aug": "08",
+                                "Sep": "09",
+                                "Oct": "10",
+                                "Nov": "11",
+                                "Dec": "12"
                             }
                             // document.addEventListener("DOMContentLoaded",function(){
                             //     const date = document.getElementById("d1").innerHTML;
@@ -269,23 +276,23 @@
                             //     localStorage.setItem('accessDate', newDate);
                             // }, {once:true});
                             const btn1 = document.getElementById("a2");
-                            btn1.addEventListener('click', function(){
+                            btn1.addEventListener('click', function () {
                                 const date = document.getElementById("d2").innerHTML;
-                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
+                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0, 2)}`
                                 localStorage.setItem('accessDate', newDate);
                                 window.location.reload();
                             });
                             const btn2 = document.getElementById("a3");
-                            btn2.addEventListener('click', function(){
+                            btn2.addEventListener('click', function () {
                                 const date = document.getElementById("d3").innerHTML;
-                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
+                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0, 2)}`
                                 localStorage.setItem('accessDate', newDate);
                                 window.location.assign('http://127.0.0.1:8080/index.html')
                             });
                             const btn3 = document.getElementById("a4");
-                            btn3.addEventListener('click', function(){
+                            btn3.addEventListener('click', function () {
                                 const date = document.getElementById("d4").innerHTML;
-                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
+                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0, 2)}`
                                 localStorage.setItem('accessDate', newDate);
                                 window.location.assign('http://127.0.0.1:8080/index.html')
                             });
@@ -384,11 +391,11 @@
 
                         <b>Alternative Exercises:
 
-                            <br /> 
+                            <br />
 
                             Push Up, Sit Up, Swimming, Yoga, Weightlifting
                         </b>
-                        
+
                         <hr />
                         <br />
                         <a href="/add.html" class="btn btn-primary">Add New Exercise (+)</a>
@@ -402,8 +409,8 @@
 
         </div>
     </div>
-</div>
-<!-- End content -->
+    </div>
+    <!-- End content -->
 
 </body>
 
