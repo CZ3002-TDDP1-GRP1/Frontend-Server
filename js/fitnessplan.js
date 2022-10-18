@@ -31,7 +31,7 @@ async function addNewExercise(){
         redirect: 'follow'
     };
     //const userId = '633bee48c585975318ce54fd'; //hz's userId
-    const userId = '63249e50bafe9f2070ef7d3b'; // cy's userId
+    const userId = '634cd05932c025f5f59d5867'; // cy's userId
     fetch(`http://localhost:8080/plan/${date.slice(6)}-${date.slice(0,2)}-${date.slice(3,5)}&${userId}/activity`, requestOptions)
     .then((response) => {
         // Our handler throws an error if the request did not succeed.
