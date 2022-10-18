@@ -18,7 +18,6 @@ async function addNewExercise(){
 
   myHeaders.append("Authorization", userAccessToken);
   myHeaders.append("Content-Type", "application/json");
-  console.log("Hi");
   var date = document.getElementById("start").value;
   var exerciseID = exercisesList[document.getElementById("exerciseList").value];
   console.log(document.getElementById("exerciseList").value);
@@ -56,6 +55,8 @@ async function editExercise(clickID){
   console.log(clickList[0]);
   console.log(clickList[1]);
   var myHeaders = new Headers();
+  var date = localStorage.getItem('accessDate');
+
   var userAccessToken = localStorage.getItem('accessToken');
   // var date = document.getElementById("start").value;
   
@@ -76,7 +77,7 @@ async function editExercise(clickID){
     redirect: 'follow'
   };
   
-  await fetch(`http://localhost:8080/plan/2022-10-18/activity`, requestOptions)
+  await fetch(`http://localhost:8080/plan/${date}/activity`, requestOptions)
     .then(response => response.json())
     .then(result => {
       console.log(result)
@@ -90,7 +91,7 @@ async function deleteExercise(activityID){
 console.log(activityID);
 var myHeaders = new Headers();
 var userAccessToken = localStorage.getItem('accessToken');
-// var date = document.getElementById("start").value;
+var date = localStorage.getItem('accessDate');
 
 myHeaders.append("Authorization", userAccessToken);
 myHeaders.append("Content-Type", "application/json");
@@ -106,7 +107,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://localhost:8080/plan/2022-10-18/activity`, requestOptions)
+fetch(`http://localhost:8080/plan/${date}/activity`, requestOptions)
   .then(response => response.text())
   .then(result => {
     console.log(result)
@@ -132,7 +133,7 @@ try {
 };    
 var myHeaders = new Headers();
 var userAccessToken = localStorage.getItem('accessToken');
-// var date = document.getElementById("start").value;
+var date = localStorage.getItem('accessDate');
 
 myHeaders.append("Authorization", userAccessToken);
 myHeaders.append("Content-Type", "application/json");
@@ -142,7 +143,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 
-fetch(`http://localhost:8080/plan/2022-10-18`, requestOptions)
+fetch(`http://localhost:8080/plan/${date}`, requestOptions)
 .then(response => response.json())
 .then(result => {
 const activities = result.activities;
