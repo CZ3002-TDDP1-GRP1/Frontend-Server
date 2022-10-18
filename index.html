@@ -81,28 +81,31 @@
                     var month = d.getMonth() + 1;
                     var day = d.getDate();
 
-                    // var output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-
+                    var output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + day;
+                    document.getElementById('d').value = output;
                     document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                     
                     // output = d.getFullYear() + '/' +
                     //         (month < 10 ? '0' : '') + month + '/' +
                     //         (day < 10 ? '0' : '') + ++day;
                     d.setDate(d.getDate() + 1);
+                    document.getElementById('a2').value = d;
                     document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                     
                     // output = d.getFullYear() + '/' +
                     //         (month < 10 ? '0' : '') + month + '/' +
                     //         (day < 10 ? '0' : '') + ++day;
                     d.setDate(d.getDate() + 1);
+                    document.getElementById('a3').value = d;
                     document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                     
                     // output = d.getFullYear() + '/' +
                     //         (month < 10 ? '0' : '') + month + '/' +
                     //         (day < 10 ? '0' : '') + ++day;
                     d.setDate(d.getDate() + 1);
+                    document.getElementById('a4').value = d;
                     document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 } else {
 
@@ -111,10 +114,10 @@
                     var month = d.getMonth() + 1;
                     var day = d.getDate();
                     // console.log(d);
-                    // var output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
-
+                    var output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + day;
+                    document.getElementById('d').value = output;
                     document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
                     // day = day + 1
@@ -122,6 +125,7 @@
                     //         (month < 10 ? '0' : '') + month + '/' +
                     //         (day < 10 ? '0' : '') + day;
                     d.setDate(d.getDate() + 1);
+                    document.getElementById('a2').value = d;
                     document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
                     // day = day + 1
@@ -129,6 +133,7 @@
                     //         (month < 10 ? '0' : '') + month + '/' +
                     //         (day < 10 ? '0' : '') + day;
                     d.setDate(d.getDate() + 1);
+                    document.getElementById('a3').value = d;
                     document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
                     // day = day + 1
@@ -136,6 +141,7 @@
                     //         (month < 10 ? '0' : '') + month + '/' +
                     //         (day < 10 ? '0' : '') + day;
                     d.setDate(d.getDate() + 1);
+                    document.getElementById('a4').value = d;
                     document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 }
 
@@ -198,15 +204,15 @@
                     <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
                         <div class="row">
-                            <div id="a2"class="col-md-3 btn" style="border: 0.4em solid;border-radius: 2em;border-color:red;">
+                            <div id="a2" value="" class="col-md-3 btn">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                 <p id="d2" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
                             </div>
-                            <div id="a3" class="col-md-3 btn">
+                            <div id="a3" value="" class="col-md-3 btn">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                 <p id="d3" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p><br /> <br /> 
                             </div>
-                            <div id="a4" class="col-md-3 btn">
+                            <div id="a4" value="" class="col-md-3 btn">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                 <p id="d4" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
                             </div>
@@ -222,14 +228,14 @@
                             <form action="">
                                 <div class="glyphicon glyphicon-calendar" style="font-weight: bold; font-size: 3em; padding: 0.42em;"></div>
                                 <br />
-                                <input type="date" id="d" name="d" placeholder="Select Date">
+                                <input type="date" id="d" value="" name="d" placeholder="Select Date">
                                 <br />
                                 <input type="submit" value=" Select Date">
                             </form>
                         </div>
 
                         <div class="content row" style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;"> 
-                                    <p id="d1" class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;"></p>
+                                    <p id="d1" value="" class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;"></p>
                                 <div class="col-sm-5">
                                     <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                     <p style="font-weight: bold; text-align:center; font-size: 2rem;padding: 0.1rem;">Thundery Showers</p>

@@ -52,20 +52,24 @@
         let bmi = w / (h * h);
         switch (true) {
           case bmi < 18.5:
-            document.getElementById("result").innerHTML =
-              "You are severely underweight, risk of nutritional deficiency.";
+            document.getElementById("result").innerHTML = `bmi= ${bmi.toFixed(
+              2
+            )}. You are severely underweight, risk of nutritional deficiency.`;
             break;
           case bmi < 23:
-            document.getElementById("result").innerHTML =
-              "Good job, your weight is in the healthy range.";
+            document.getElementById("result").innerHTML = `bmi= ${bmi.toFixed(
+              2
+            )}. Good job, your weight is in the healthy range.`;
             break;
           case bmi < 30:
-            document.getElementById("result").innerHTML =
-              "Overweight! You are at moderate risk for heart disease and diabetes.";
+            document.getElementById("result").innerHTML = `bmi= ${bmi.toFixed(
+              2
+            )}. Overweight! You are at moderate risk for heart disease and diabetes.`;
             break;
           case bmi >= 30:
-            document.getElementById("result").innerHTML =
-              "You are obese! at higher risk of getting heart disease and diabetes.";
+            document.getElementById("result").innerHTML = `bmi= ${bmi.toFixed(
+              2
+            )}. You are obese! at higher risk of getting heart disease and diabetes.`;
           default:
             document.getElementById("result").innerHTML =
               "confusing results, did you enter the correct inputs?";
@@ -153,7 +157,7 @@
               Calculate
             </a>
             <br />
-
+            <br />
             <div id="result"></div>
           </div>
         </div>
