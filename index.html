@@ -177,7 +177,9 @@
             <div id="nav-placeholder"></div>
 
             <!--Main content -->
-
+            <script>
+                document.addEventListener("DOMContentLoaded", getFitnessPlan());
+            </script>
             <div class="full-width main-content" >
                 <div class="home-content" style="
                      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/ML4.png');
@@ -194,7 +196,7 @@
                     <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
                         <div class="row">
-                            <div class="col-md-3 btn" onclick="getFitnessPlan()"style="border: 0.4em solid;border-radius: 2em;border-color:red;">
+                            <div class="col-md-3 btn" style="border: 0.4em solid;border-radius: 2em;border-color:red;">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
                                 <p id="d2" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
                             </div>
@@ -241,8 +243,11 @@
                                     </div>
                                 </div>
                         </div>
+                        <div id="dynamic-container">
+
+                        </div>
                         
-                        <div class="row pushup form-check" style="padding: 0.5em;">
+                        <!-- <div class="row pushup form-check" style="padding: 0.5em;">
                             <div class="col-md-2">
                                 <input class="form-check-input" type="checkbox" value="" id="pushup">
                             </div>
@@ -330,7 +335,7 @@
                                 <br />
                                 burned
                             </div>
-                        </div>
+                        </div> -->
 
                         <hr />
 
