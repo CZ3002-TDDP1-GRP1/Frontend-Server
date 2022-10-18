@@ -1,21 +1,27 @@
-function addNewExercise(){
+async function addNewExercise(){
+    var exercisesList = {};
+    try {     
+      const response = await fetch('http://localhost:8080/exercise', {
+        method: 'get'
+      });
+      const results = await response.json();
+      results.forEach(exercise => {
+        exercisesList[exercise.name] = exercise._id;
+      })
+      console.log(exercisesList);
+    } catch(err) {
+      console.error(`Error: ${err}`);
+    };    
 
     var myHeaders = new Headers();
     var userAccessToken = localStorage.getItem('accessToken');
 
     myHeaders.append("Authorization", userAccessToken);
     myHeaders.append("Content-Type", "application/json");
-    console.log("Hi");
     var date = document.getElementById("start").value;
-    var exercise = document.getElementById("exercise").value;
-    // push up, sit up, running, walking, cycling, swimming, Yoga, weightlifting
-    //const exercisesID = ["633aeca7c395a37172c92aaf","633aeca7c395a37172c92ab0","633aeca7c395a37172c92ab1","633aeca7c395a37172c92ab2",
-    //                    "633aeca7c395a37172c92ab3", "633aeca7c395a37172c92ab4", "633aeca7c395a37172c92ab5", "633aeca7c395a37172c92ab6"]
-    const exercisesID = ["634cd05932c025f5f59d5867","633aeca7c395a37172c92ab0","633aeca7c395a37172c92ab1","633aeca7c395a37172c92ab2",
-    "633aeca7c395a37172c92ab3", "633aeca7c395a37172c92ab4", "633aeca7c395a37172c92ab5", "633aeca7c395a37172c92ab6"]
-    const exerciseId = exercisesID[exercise-1];
+    var exerciseID = exercisesList[document.getElementById("exercise").value];
     var raw = JSON.stringify({
-        "exerciseID": exerciseId,
+        "exerciseID": exerciseID,
         "quantity": document.getElementById("rep").value,
         "sets": document.getElementById("set").value
     });
@@ -27,8 +33,8 @@ function addNewExercise(){
         redirect: 'follow'
     };
     //const userId = '633bee48c585975318ce54fd'; //hz's userId
-    const userId = '63249e50bafe9f2070ef7d3b'; // cy's userId
-    fetch(`http://localhost:8080/plan/${date.slice(6)}-${date.slice(0,2)}-${date.slice(3,5)}/activity`, requestOptions)
+    const userId = '634cd05932c025f5f59d5867'; // cy's userId
+    fetch(`http://localhost:8080/plan/${date.slice(6)}-${date.slice(0,2)}-${date.slice(3,5)}&${userId}/activity`, requestOptions)
     .then((response) => {
         // Our handler throws an error if the request did not succeed.
         if (!response.ok) {
@@ -45,14 +51,15 @@ function addNewExercise(){
 }
 
 async function editExercise(){
+    alert(document.getElementById("current-reps").value);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
     var raw = JSON.stringify({
       "activityID": "633c0e2051360afcf8e78d2f",
       "exerciseID": "633aeca7c395a37172c92ab0",
-      "quantity": 50,
-      "sets": 3,
+      "quantity": document.getElementById("edit-reps").value,
+      "sets": document.getElementById("edit-sets").value,
       "done": false
     });
     
@@ -64,7 +71,7 @@ async function editExercise(){
     };
     
     fetch("http://localhost:8080/plan/2022-10-04&633bee48c585975318ce54fd/activity", requestOptions)
-      .then(response => response.text())
+      .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
 }
@@ -74,10 +81,22 @@ async function deleteExercise(){
 }
 
 async function getFitnessPlan(){
+    var exercisesList = {};
+    try {     
+      const response = await fetch('http://localhost:8080/exercise', {
+        method: 'get'
+      });
+      const results = await response.json();
+      results.forEach(exercise => {
+        exercisesList[exercise._id] = exercise.name;
+      })
+      console.log(exercisesList);
+    } catch(err) {
+      console.error(`Error: ${err}`);
+    };    
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "e");
     myHeaders.append("Content-Type", "application/json");
-
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
@@ -85,7 +104,81 @@ async function getFitnessPlan(){
     };
 
     fetch("http://localhost:8080/plan/date/2022-10-05&633bee48c585975318ce54fd", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .then(response => response.json())
+  .then(result => {
+    const activities = result.activities;
+    count = 0;
+    activities.forEach(async (activity) => {
+      const activityID = activity._id;
+      localStorage.setItem(activityID, JSON.stringify(activity));
+      count += 1;
+      const exerciseName = exercisesList[activity.exerciseID]
+      const mainDiv = document.getElementById("dynamic-container");
+      const newDiv = document.createElement("div");
+      str = "";
+      str = str + `<div class="col-md-2">
+                        <input class="form-check-input" type="checkbox" value="" id="${exerciseName}">
+                    </div>
+                    <div class="col-md-5">
+                        <label class="form-check-label" for="${exerciseName}" style="font-size: 13px;">
+                            <b>${exerciseName}</b>
+                        </label>
+                    </div>
+                    <div class="col-md-5">
+                        <button onclick="openForm(this.id)" class="btn btn-danger" id="${activityID}"style="padding: 0.5em; text-decoration: none;">
+                            <span class="glyphicon glyphicon-pencil"></span> 
+                        </button>
+
+                        <div class="form-popup" id="myForm">
+                          <form action="/action_page.php" class="form-container">
+                            <select id="exercise">
+                              <option value="Push Up">Push Up</option>
+                              <option value="Sit Up">Sit Up</option>
+                              <option value="Running">Running</option>
+                              <option value="Swimming">Swimming</option>
+                              <option value="Weightlifting">Weightlifting</option>
+                            </select>
+                            </br>
+
+                            <label for="Reps"><b>Number of Reps</b></label>
+                            <input type="text" placeholder="" id="edit-reps" required>
+
+                            <label for="Sets"><b>Number of Sets</b></label>
+                            <input type="text" placeholder="" id="edit-sets" required>
+
+                            <button type="submit" class="btn" onclick="editExercise()">Edit</button>
+                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                          </form>
+                        </div>
+
+                        <a href="#" onclick="deleteExercise(this.id)" class="btn btn-info" style="padding: 0.5em; text-decoration: none;">
+                            <span class="glyphicon glyphicon-trash"></span> 
+                        </a> 
+                    </div>
+                    <br /> <br /> <br />
+                    <div class="col-md-6">
+                        <span id="current-reps">Reps: ${activity.totalQuantity}</span>
+                        <br />
+                        <span id="current-sets">Sets: ${activity.sets}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="glyphicon glyphicon-fire"></span> 102.60kcal
+                        <br />
+                        burned
+                    </div>
+                  </div>`
+      newDiv.innerHTML = str;
+      mainDiv.appendChild(newDiv);
+    })
+  })
+  .catch(err => console.log(err));
+}
+
+function openForm(clickID){
+  console.log(clickID);
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm(){
+  document.getElementById("myForm").style.display = "none";
 }
