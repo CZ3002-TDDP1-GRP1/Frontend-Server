@@ -17,16 +17,19 @@ async function loginHandler() {
     };
     
     fetch("http://localhost:8080/auth/login", requestOptions)
-      .then((response) => {
+      .then((response) => response.json())
+      .then((data) => {
         // Our handler throws an error if the request did not succeed.
-        if (!response.ok) {
+        if (!data.success) {
           alert("Login Failed: Please check your email/password...");
-          throw new Error(`HTTP error: ${response.status}`);
+          throw new Error(`HTTP error: ${data.message}`);
         }
-        return response.text();
+        else{
+          window.location.assign('http://127.0.0.1:8080/index.html');
+          localStorage.setItem('accessToken', data.token);
+          localStorage.setItem('refreshToken', data.refreshToken);
+        }
+        return data.message;
         })
-      .then(result => {
-        console.log(result);
-        window.location.assign('http://127.0.0.1:8080/index.html');})
       .catch(error => console.log('error', error)); 
 }

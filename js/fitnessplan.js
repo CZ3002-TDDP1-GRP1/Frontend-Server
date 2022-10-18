@@ -14,10 +14,12 @@ async function addNewExercise(){
     };    
 
     var myHeaders = new Headers();
+    var userAccessToken = localStorage.getItem('accessToken');
+
+    myHeaders.append("Authorization", userAccessToken);
     myHeaders.append("Content-Type", "application/json");
     var date = document.getElementById("start").value;
     var exerciseID = exercisesList[document.getElementById("exercise").value];
-    
     var raw = JSON.stringify({
         "exerciseID": exerciseID,
         "quantity": document.getElementById("rep").value,
