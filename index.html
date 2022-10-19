@@ -85,27 +85,29 @@
                             (month < 10 ? '0' : '') + month + '-' +
                             (day < 10 ? '0' : '') + day;
                     document.getElementById('d').value = output;
+                    console.log(output);
+                    localStorage.setItem('accessDate', output);
                     document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                     
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + ++day;
                     d.setDate(d.getDate() + 1);
-                    document.getElementById('a2').value = d;
+                    output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + ++day;
+                    document.getElementById('d2').value = output;
                     document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                     
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + ++day;
                     d.setDate(d.getDate() + 1);
-                    document.getElementById('a3').value = d;
+                    output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + ++day;
+                    document.getElementById('d3').value = output;
                     document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                     
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + ++day;
                     d.setDate(d.getDate() + 1);
-                    document.getElementById('a4').value = d;
+                    output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + ++day;
+                    document.getElementById('d4').value = output;
                     document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 } else {
 
@@ -118,30 +120,38 @@
                             (month < 10 ? '0' : '') + month + '-' +
                             (day < 10 ? '0' : '') + day;
                     document.getElementById('d').value = output;
+                    console.log(output);
+                    localStorage.setItem('accessDate', output);
                     document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
-                    // day = day + 1
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
                     d.setDate(d.getDate() + 1);
-                    document.getElementById('a2').value = d;
+                    month = d.getMonth() + 1;
+                    day = d.getDate();
+                    output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + day;
+                    document.getElementById('d2').value = output;
                     document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
-                    // day = day + 1
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
+                    
                     d.setDate(d.getDate() + 1);
-                    document.getElementById('a3').value = d;
+                    month = d.getMonth() + 1;
+                    day = d.getDate();
+                    output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + day;
+                    d.setDate(d.getDate() + 1);
+                    document.getElementById('d3').value = output;
                     document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
-                    // day = day + 1
-                    // output = d.getFullYear() + '/' +
-                    //         (month < 10 ? '0' : '') + month + '/' +
-                    //         (day < 10 ? '0' : '') + day;
                     d.setDate(d.getDate() + 1);
-                    document.getElementById('a4').value = d;
+                    month = d.getMonth() + 1;
+                    day = d.getDate();
+                    output = d.getFullYear() + '-' +
+                            (month < 10 ? '0' : '') + month + '-' +
+                            (day < 10 ? '0' : '') + day;
+                    d.setDate(d.getDate() + 1);
+                    document.getElementById('d4').value = output;
                     document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 }
 
@@ -204,17 +214,17 @@
                     <div class="row text-center" style="background: white; padding: 2.5em; color: black; width: 60%; margin: 0 auto;">
 
                         <div class="row">
-                            <div id="a2" value="" class="col-md-3 btn">
+                            <div id="a2" class="col-md-3 btn">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                <p id="d2" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
+                                <p id="d2" value="" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
                             </div>
-                            <div id="a3" value="" class="col-md-3 btn">
+                            <div id="a3" class="col-md-3 btn">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                <p id="d3" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p><br /> <br /> 
+                                <p id="d3" value="" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p><br /> <br /> 
                             </div>
-                            <div id="a4" value="" class="col-md-3 btn">
+                            <div id="a4" class="col-md-3 btn">
                                 <img src="images/thundercloud.png" style="max-height: 7em;" aria-label="weather"/>
-                                <p id="d4" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
+                                <p id="d4" value="" style="font-weight: bold;font-size: 1.3em;padding: 0.3em;"></p>
                             </div>
                                 
                             <!-- <div class="col-md-2 btn">
@@ -230,9 +240,20 @@
                                 <br />
                                 <input type="date" id="d" value="" name="d" placeholder="Select Date">
                                 <br />
-                                <input type="submit" value=" Select Date">
+                                <input id='dateBtn' type="submit" value=" Select Date">
                             </form>
                         </div>
+                        <!-- <script>
+                            const btn = document.getElementById('dateBtn');
+                            var d = document.getElementById('d').value;
+                            var month = d.getMonth() + 1;
+                            var day = d.getDate();
+
+                            var output = d.getFullYear() + '-' +
+                                    (month < 10 ? '0' : '') + month + '-' +
+                                    (day < 10 ? '0' : '') + day;
+                            btn.addEventListener("click", localStorage.setItem('accessDate', output));
+                        </script> -->
 
                         <div class="content row" style="border-radius: 3em;background-color: white;margin: 1rem; border: 0.1em solid black;height:fit-content;vertical-align: top;padding:1rem;clear: both;padding-bottom: 1rem;"> 
                                     <p id="d1" value="" class="col-sm-3" style="font-weight: bold;font-size: 2rem; text-align: center;padding-top: 4rem;"></p>
@@ -278,23 +299,26 @@
                             // }, {once:true});
                             const btn1 = document.getElementById("a2");
                             btn1.addEventListener('click', function(){
-                                const date = document.getElementById("d2").innerHTML;
-                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
-                                localStorage.setItem('accessDate', newDate);
+                                const date = document.getElementById("d2").value;
+                                // const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
+                                localStorage.setItem('accessDate', date);
+                                document.getElementById('d').value = date;
                                 window.location.reload();
                             });
                             const btn2 = document.getElementById("a3");
                             btn2.addEventListener('click', function(){
-                                const date = document.getElementById("d3").innerHTML;
-                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
-                                localStorage.setItem('accessDate', newDate);
+                                const date = document.getElementById("d3").value;
+                                // const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
+                                localStorage.setItem('accessDate', date);
+                                document.getElementById('d').value = date;
                                 window.location.reload();
                             });
                             const btn3 = document.getElementById("a4");
                             btn3.addEventListener('click', function(){
-                                const date = document.getElementById("d4").innerHTML;
-                                const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
-                                localStorage.setItem('accessDate', newDate);
+                                const date = document.getElementById("d4").value;
+                                // const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0,2)}`
+                                localStorage.setItem('accessDate', date);
+                                document.getElementById('d').value = date;
                                 window.location.reload();
                             });
                         </script>
