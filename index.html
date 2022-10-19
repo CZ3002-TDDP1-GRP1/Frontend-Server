@@ -26,6 +26,7 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/fitnessplan.js"></script>
+        <script src="js/forecast.js"></script>
 
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" type="text/css"> 
@@ -266,11 +267,13 @@
                                 <div class="col-sm-4">
                                     <div class="row" style="padding-top: 10%;text-align: center;">
                                         <img src="images/hot.png" style="max-height: 3em;">
-                                        <span style="position:absolute;bottom: 50%;">32&#8451;</span>
+                                        <span id="highTemp" style="position:absolute;bottom: 50%;">
+                                            <body onload = "getHighTemp(localStorage.getItem('accessDate'))"></body>
+                                        </span>
                                     </div>
                                     <div class="row" style="text-align: center;">
                                         <img src="images/cold.png" style="max-height: 3em;"/>
-                                        <span style="position:absolute;bottom: 13%;">24&#8451;</span>
+                                        <span id="lowTemp" style="position:absolute;bottom: 13%;"></span>
                                     </div>
                                 </div>
                         </div>
