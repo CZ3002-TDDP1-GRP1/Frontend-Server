@@ -75,18 +75,19 @@
 
             var d = getUrlParameter('d');
 
-            var options = { month: 'short', day: 'numeric' };
+            var options = { month: 'short', day: '2-digit' };
             if (d != "") {
-
+                
                 d = new Date(d.replace(/(\d{2})-(\d{2})-(\d{4})/, "$2/$1/$3"))
                 // console.log(d);
                 var month = d.getMonth() + 1;
                 var day = d.getDate();
 
-                // var output = d.getFullYear() + '/' +
-                //         (month < 10 ? '0' : '') + month + '/' +
-                //         (day < 10 ? '0' : '') + day;
-
+                var output = d.getFullYear() + '-' +
+                        (month < 10 ? '0' : '') + month + '-' +
+                        (day < 10 ? '0' : '') + day;
+                localStorage.setItem('accessDate', output);
+                document.getElementById("d").value = output;
                 document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
                 // output = d.getFullYear() + '/' +
@@ -112,26 +113,27 @@
 
                 var month = d.getMonth() + 1;
                 var day = d.getDate();
-                // console.log(d);
-                // var output = d.getFullYear() + '/' +
-                //         (month < 10 ? '0' : '') + month + '/' +
-                //         (day < 10 ? '0' : '') + day;
-
+                console.log(d);
+                var output = d.getFullYear() + '-' +
+                        (month < 10 ? '0' : '') + month + '-' +
+                        (day < 10 ? '0' : '') + day;
+                localStorage.setItem('accessDate', output);
+                document.getElementById("d").value = output;
                 document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-                document.getElementById("d1").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-                // day = day + 1
-                // output = d.getFullYear() + '/' +
-                //         (month < 10 ? '0' : '') + month + '/' +
-                //         (day < 10 ? '0' : '') + day;
-                d.setDate(d.getDate() + 1);
                 document.getElementById("d2").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
-
                 // day = day + 1
                 // output = d.getFullYear() + '/' +
                 //         (month < 10 ? '0' : '') + month + '/' +
                 //         (day < 10 ? '0' : '') + day;
                 d.setDate(d.getDate() + 1);
                 document.getElementById("d3").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
+
+                // day = day + 1
+                // output = d.getFullYear() + '/' +
+                //         (month < 10 ? '0' : '') + month + '/' +
+                //         (day < 10 ? '0' : '') + day;
+                d.setDate(d.getDate() + 1);
+                document.getElementById("d4").innerHTML = d.toLocaleDateString("en-US", options).split(" ").reverse().join(" ");
 
                 // day = day + 1
                 // output = d.getFullYear() + '/' +
@@ -224,9 +226,9 @@
                                 <div class="glyphicon glyphicon-calendar"
                                     style="font-weight: bold; font-size: 3em; padding: 0.42em;"></div>
                                 <br />
-                                <input type="date" id="d" name="d" placeholder="Select Date">
+                                <input type="date" value="" id="d" name="d" placeholder="Select Date">
                                 <br />
-                                <input type="submit" value=" Select Date">
+                                <input type="submit" id="date" value=" Select Date">
                             </form>
                         </div>
                         
@@ -280,22 +282,49 @@
                             btn1.addEventListener('click', function () {
                                 const date = document.getElementById("d2").innerHTML;
                                 const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0, 2)}`
+                                document.getElementById("d").value = newDate;
+                                let elms = document.getElementsByTagName('input');
+                                for(let i = 0; i < elms.length; i++) {
+                                    let sb = elms[i];
+                                    if(sb.type == "submit") {
+                                        sb.click();
+                                        break;
+                                    }
+                                }
                                 localStorage.setItem('accessDate', newDate);
-                                window.location.reload();
+                                // window.location.reload();
                             });
                             const btn2 = document.getElementById("a3");
                             btn2.addEventListener('click', function () {
                                 const date = document.getElementById("d3").innerHTML;
                                 const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0, 2)}`
+                                document.getElementById("d").value = newDate;
+                                let elms = document.getElementsByTagName('input');
+                                for(let i = 0; i < elms.length; i++) {
+                                    let sb = elms[i];
+                                    if(sb.type == "submit") {
+                                        sb.click();
+                                        break;
+                                    }
+                                }
                                 localStorage.setItem('accessDate', newDate);
-                                window.location.reload();
+                                // window.location.reload();
                             });
                             const btn3 = document.getElementById("a4");
                             btn3.addEventListener('click', function () {
                                 const date = document.getElementById("d4").innerHTML;
                                 const newDate = `2022-${dateDict[date.slice(3)]}-${date.slice(0, 2)}`
+                                document.getElementById("d").value = newDate;
+                                let elms = document.getElementsByTagName('input');
+                                for(let i = 0; i < elms.length; i++) {
+                                    let sb = elms[i];
+                                    if(sb.type == "submit") {
+                                        sb.click();
+                                        break;
+                                    }
+                                }
                                 localStorage.setItem('accessDate', newDate);
-                                window.location.reload();
+                                // window.location.reload();
                             });
                         </script>
                         <!-- <div class="row pushup form-check" style="padding: 0.5em;">
